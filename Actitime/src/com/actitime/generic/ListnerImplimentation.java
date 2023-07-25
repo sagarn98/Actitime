@@ -2,6 +2,7 @@ package com.actitime.generic;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDateTime;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -24,8 +25,9 @@ public class ListnerImplimentation extends BaseClass implements ITestListener {
 	public void onTestFailure(ITestResult result) {
 		String name = result.getName();
 	 TakesScreenshot t=(TakesScreenshot) driver;
+	 String timeStamp = LocalDateTime.now().toString().replace(':', '-');
 	 File src = t.getScreenshotAs(OutputType.FILE);
-	 File dest=new File("./Screenshot/"+name+".png");
+	 File dest=new File("./Screenshot/"+name+timeStamp+".png");
 	
 	 try {
 		FileUtils.copyFile(src, dest);
