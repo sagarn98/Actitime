@@ -24,6 +24,8 @@ public class ListnerImplimentation extends BaseClass implements ITestListener {
 	@Override
 	public void onTestFailure(ITestResult result) {
 		String name = result.getName();
+		result.getName();
+		
 	 TakesScreenshot t=(TakesScreenshot) driver;
 	 String timeStamp = LocalDateTime.now().toString().replace(':', '-');
 	 File src = t.getScreenshotAs(OutputType.FILE);

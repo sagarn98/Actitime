@@ -38,6 +38,7 @@ public class BaseClass {
 		driver.get(url);
 		LoginPage l=new LoginPage(driver);
 		l.setLogin(un, pw);
+	
 	}
 
 	@AfterMethod
